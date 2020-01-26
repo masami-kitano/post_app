@@ -15,7 +15,7 @@ class User < ApplicationRecord
   
   # お気に入り機能
   has_many :favorites
-  has_many :fav_microposts, through: :favorites, source: :micropost
+  has_many :likes, through: :favorites, source: :micropost
   
   def follow(other_user)
     unless self == other_user
@@ -49,6 +49,6 @@ class User < ApplicationRecord
   end
   
   def favorite?(micropost)
-    self.fav_microposts.include?(micropost)
+    self.likes.include?(micropost)
   end
 end

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get :followings
       get :followers
       
-      get :likes, to: :fav_microposts
+      get :likes
     end
   end
   # collection do
